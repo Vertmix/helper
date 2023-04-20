@@ -268,15 +268,15 @@ public class CitizensNpcFactory implements NpcFactory {
         @Deprecated
         public void setSkin(@Nonnull String skinPlayer) {
             try {
-                this.npc.data().set(NPC.PLAYER_SKIN_UUID_METADATA, skinPlayer);
-                this.npc.data().set(NPC.PLAYER_SKIN_USE_LATEST, true);
-
-                if (this.npc instanceof SkinnableEntity) {
-                    ((SkinnableEntity) this.npc).getSkinTracker().notifySkinChange(true);
-                }
-                if (this.npc.getEntity() instanceof SkinnableEntity) {
-                    ((SkinnableEntity) this.npc.getEntity()).getSkinTracker().notifySkinChange(true);
-                }
+//                this.npc.data().set(NPC.Metadata.PLAYER_SKIN_UUID_METADATA, skinPlayer);
+//                this.npc.data().set(NPC.PLAYER_SKIN_USE_LATEST, true);
+//
+//                if (this.npc instanceof SkinnableEntity) {
+//                    ((SkinnableEntity) this.npc).getSkinTracker().notifySkinChange(true);
+//                }
+//                if (this.npc.getEntity() instanceof SkinnableEntity) {
+//                    ((SkinnableEntity) this.npc.getEntity()).getSkinTracker().notifySkinChange(true);
+//                }
             } catch (Throwable e) {
                 e.printStackTrace();
             }
@@ -285,12 +285,12 @@ public class CitizensNpcFactory implements NpcFactory {
         @Override
         public void setSkin(@Nonnull String textures, @Nonnull String signature) {
             try {
-                this.npc.data().set(NPC.PLAYER_SKIN_TEXTURE_PROPERTIES_METADATA, textures);
-                this.npc.data().set(NPC.PLAYER_SKIN_TEXTURE_PROPERTIES_SIGN_METADATA, signature);
+//                this.npc.data().set(NPC.PLAYER_SKIN_TEXTURE_PROPERTIES_METADATA, textures);
+//                this.npc.data().set(NPC.PLAYER_SKIN_TEXTURE_PROPERTIES_SIGN_METADATA, signature);
                 this.npc.data().set("cached-skin-uuid-name", "null");
                 this.npc.data().set("player-skin-name", "null");
                 this.npc.data().set("cached-skin-uuid", UUID.randomUUID().toString());
-                this.npc.data().set(NPC.PLAYER_SKIN_USE_LATEST, false);
+//                this.npc.data().set(NPC.PLAYER_SKIN_USE_LATEST, false);
 
                 if (this.npc instanceof SkinnableEntity) {
                     ((SkinnableEntity) this.npc).getSkinTracker().notifySkinChange(true);
@@ -310,7 +310,7 @@ public class CitizensNpcFactory implements NpcFactory {
 
         @Override
         public void setShowNametag(boolean show) {
-            this.npc.data().set(NPC.NAMEPLATE_VISIBLE_METADATA, show);
+//            this.npc.data().set(NPC.NAMEPLATE_VISIBLE_METADATA, show);
         }
 
         @Nonnull

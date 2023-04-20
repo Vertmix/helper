@@ -38,13 +38,7 @@ import me.lucko.helper.scheduler.Ticks;
 import org.bukkit.Bukkit;
 
 import java.util.Objects;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -99,7 +93,7 @@ final class HelperPromise<V> implements Promise<V> {
                 public void onFailure(@Nonnull Throwable t) {
                     promise.completeExceptionally(t);
                 }
-            });
+            }, Executors.newCachedThreadPool());
 
             return promise;
 

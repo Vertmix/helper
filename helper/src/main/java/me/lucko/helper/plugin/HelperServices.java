@@ -38,9 +38,6 @@ import me.lucko.helper.npc.CitizensNpcFactory;
 import me.lucko.helper.npc.NpcFactory;
 import me.lucko.helper.scoreboard.PacketScoreboardProvider;
 import me.lucko.helper.scoreboard.ScoreboardProvider;
-import me.lucko.helper.signprompt.PacketSignPromptFactory;
-import me.lucko.helper.signprompt.SignPromptFactory;
-
 import org.bukkit.plugin.ServicePriority;
 
 final class HelperServices {
@@ -53,9 +50,6 @@ final class HelperServices {
             PacketScoreboardProvider scoreboardProvider = new PacketScoreboardProvider(plugin);
             plugin.provideService(ScoreboardProvider.class, scoreboardProvider);
             plugin.provideService(PacketScoreboardProvider.class, scoreboardProvider);
-
-            SignPromptFactory signPromptFactory = new PacketSignPromptFactory();
-            plugin.provideService(SignPromptFactory.class, signPromptFactory);
 
             try {
                 IndividualHologramFactory hologramFactory = new PacketIndividualHologramFactory();
